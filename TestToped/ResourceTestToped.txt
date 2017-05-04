@@ -1,0 +1,36 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Variables ***
+${BROWSER}        ff
+${DETAIL PROBLEM}    Test dengan Robot Framework. Test test test test test test
+${DETAIL LOCATOR ID}    id=ticket_reply_msg
+${FULL NAME}      Sandy Ambarita
+${FULL NAME LOCATOR ID}    id=full_name
+${EMAIL}          sandyambarita@gmail.com
+${EMAIL LOCATOR ID}    id=user_email
+${FILE}           ${EMPTY}
+${FILE ID}        D:\\TestToped
+${AUTOIT}			D:\\TestToped\\imageupload.exe
+${AUTOIT ID}		id=pickfiles-nav1
+
+*** Keywords ***
+Enter Detail Problem
+    [Arguments]    ${DETAIL PROBLEM}
+    Input Text    ${DETAIL LOCATOR ID}    ${DETAIL PROBLEM}
+    Input Text    xpath=//*[@id="ticket_reply_msg"]    ${DETAIL PROBLEM}
+
+Enter Full Name
+    [Arguments]    ${FULL NAME}
+    Input Text    ${FULL NAME LOCATOR ID}    ${FULL NAME}
+    Input Text    xpath=//*[@id="full_name"]    ${FULL NAME}
+
+Enter Email
+    [Arguments]    ${EMAIL}
+    Input Text    ${EMAIL LOCATOR ID}    ${EMAIL}
+    Input Text    xpath=//*[@id="user_email"]    ${EMAIL}
+
+Enter File
+    [Arguments]    ${FILE}
+    Input Text    ${FILE ID}    ${FILE}
+    Input Text    xpath=//*[@id="pickfiles-nav1"]    ${FILE}
